@@ -8,7 +8,7 @@
 <script>
 const MI_CONFIGURACION = {
     nombreMarca: "Mi Gran Día",
-    slogan:    "Eventos Inolvidables",
+    slogan: "Eventos Inolvidables",
     tituloHero: "La primera impresión de tu Gran Día comienza aquí.",
     subtituloHero: "Invitaciones digitales e interactivas que enamoran a tus invitados.",
     fraseFinal: '"Porque los mejores momentos de la vida merecen ser anunciados con elegancia."',
@@ -18,7 +18,10 @@ const MI_CONFIGURACION = {
     enlaceXV: "https://tu-enlace-de-ejemplo-xv.com",
     enlaceBautizo: "https://tu-enlace-de-ejemplo-bautizo.com",
     enlaceBaby: "https://tu-enlace-de-ejemplo-baby.com",
-    fotoLogo: "https://www.dropbox.com/scl/fi/udpb0yseydby9bwvlfvc2/LOGOMIGRANDIA.png?rlkey=2wi2l2k7yj43mukvb682sm7c6&raw=1",
+    
+    // 👇 PEGA AQUÍ EL ENLACE DE DROPBOX DE TU LOGO 👇
+    fotoLogo: "https://www.dropbox.com/scl/fi/7xqcc54jy4qtpgcmn0zhx/logo.png?rlkey=mwuejhlyagpz2r92gestu6yd2&raw=1",
+    
     fotoCelular1: "https://www.dropbox.com/scl/fi/zux2sxkc0jkjm3wl6bah8/celular-boda.png?rlkey=h87ne4ctts5pnmiwtt208tnpj&raw=1",
     fotoCelular2: "https://www.dropbox.com/scl/fi/jez673lm5uja0bp7d4qv8/15.png?rlkey=lizifto81n577oscj8861xo1f&raw=1",
     fotoPortadaBoda: "https://www.dropbox.com/scl/fi/e56oijqyqox41yphxsfjx/boda-web.png?rlkey=r6dkxn3fu3q2vm51jlk74qjq3&raw=1",
@@ -44,11 +47,11 @@ img { -webkit-user-drag: none; pointer-events: none; }
 
 body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primario);overflow-x:hidden;}
 
-/* --- HEADER TRANSPARENTE CON SLOGAN --- */
+/* --- HEADER TRANSPARENTE CON SUPER LOGO (WEB) --- */
 .header {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    padding: 10px 40px;
+    padding: 15px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -61,22 +64,23 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
     justify-content: space-between;
     max-width: 1400px; 
     margin: 0 auto;
-    padding: 8px 0;
-    border-top: 1.2px solid var(--guinda);
-    border-bottom: 1.2px solid var(--guinda);
+    padding: 10px 0;
+    border-top: 1.5px solid var(--guinda);
+    border-bottom: 1.5px solid var(--guinda);
 }
 
 .logo-nombre-grupo {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 .logo {
-    height: 75px;
+    height: 160px; /* Tamaño grande para Web */
     width: auto;
-    border-right: 1.2px solid var(--guinda);
-    padding-right: 25px;
+    border-right: 1.5px solid var(--guinda);
+    padding-right: 30px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
 
 .brand-text-wrapper {
@@ -86,9 +90,9 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: var(--primario);
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 1;
@@ -96,85 +100,126 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 
 .brand-slogan {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--dorado-solido);
-    letter-spacing: 3px;
-    margin-top: 5px;
+    letter-spacing: 4px;
+    margin-top: 8px;
     text-transform: uppercase;
 }
 
 .header-contact {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--guinda);
     font-weight: 600;
-    border: 1px solid var(--guinda);
-    padding: 8px 20px;
+    border: 1.5px solid var(--guinda);
+    padding: 10px 25px;
     border-radius: 50px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 /* HERO */
-.hero{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:80px 20px;gap:60px;}
-.hero h1{font-family:'Playfair Display',serif; font-size:4.2rem; color: var(--guinda); line-height:1.1; margin-bottom:20px;}
-.hero p{font-size:1.4rem;color:#6f5a4f;margin-bottom:40px;}
+.hero{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:100px 20px;gap:60px;}
+.hero h1{font-family:'Playfair Display',serif; font-size:4.5rem; color: var(--guinda); line-height:1.1; margin-bottom:25px;}
+.hero p{font-size:1.5rem;color:#6f5a4f;margin-bottom:45px;}
 
-.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:18px 45px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(181,146,76,0.25);transition:.4s;display:inline-block;cursor:pointer; border: none;}
+.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:20px 55px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(181, 146, 76, 0.25);transition:.4s;display:inline-block;cursor:pointer; border: none;}
 .btn:hover{transform:translateY(-3px); background-position: right center;}
 
 /* CELULARES */
 .phones{position:relative;flex:1;display:flex;justify-content:center;}
-.phone1{width:320px; transform:rotate(-5deg) translateX(40px); filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.15));}
-.phone2{width:320px; transform:rotate(5deg) translateX(-40px); filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.15));}
+.phone1{width:340px; transform:rotate(-5deg) translateX(45px); filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.15));}
+.phone2{width:340px; transform:rotate(5deg) translateX(-45px); filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.15));}
 
 /* MODELOS CON INTERACCIÓN (MOVIMIENTO) */
-.modelos{background:#fff;padding:80px 20px;text-align:center;border-radius:50px 50px 0 0;}
-.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns: repeat(4, 1fr); gap:25px;}
+.modelos{background:#fff;padding:100px 20px;text-align:center;border-radius:50px 50px 0 0;}
+.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns: repeat(4, 1fr); gap:30px;}
 
 .card{
     background:#fff;
-    border-radius:20px;
+    border-radius:25px;
     overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    box-shadow:0 12px 25px rgba(0,0,0,0.06);
     border:1px solid #f1e3d8;
-    padding-bottom:25px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* ESTO HACE QUE SE MUEVA */
+    padding-bottom:30px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-15px); /* Se eleva al pasar el ratón */
-    box-shadow: 0 20px 40px rgba(181, 146, 76, 0.2);
+    transform: translateY(-18px);
+    box-shadow: 0 25px 50px rgba(181, 146, 76, 0.2);
 }
 
-.card img{width:100%;height:300px;object-fit:cover;margin-bottom:20px;}
-.card h3{font-family:'Playfair Display',serif;margin-bottom:15px; font-size: 1.8rem;}
+.card img{width:100%;height:330px;object-fit:cover;margin-bottom:25px;}
+.card h3{font-family:'Playfair Display',serif;margin-bottom:18px; font-size: 2rem;}
 
-.footer-message{padding:100px 20px;text-align:center;background:#fdfbfb;}
-.footer-message h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-style:italic;color:var(--primario);max-width:900px;margin:0 auto 30px;}
+.footer-message{padding:120px 20px;text-align:center;background:#fdfbfb;}
+.footer-message h2{font-family:'Playfair Display',serif;font-size:3rem;font-style:italic;color:var(--primario);max-width:950px;margin:0 auto 35px;}
 
-.whatsapp{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000; transition: 0.3s;}
+.whatsapp{position:fixed;bottom:35px;right:35px;background:#25D366;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000; transition: 0.3s;}
 .whatsapp:hover { transform: scale(1.1); }
 
-/* --- MODO CELULAR INTACTO --- */
+/* --- MODO CELULAR (CORREGIDO Y CENTRADO) --- */
 @media(max-width:900px){
     .header { padding: 10px; }
-    .brand-container { flex-direction: column; border-top: 1.2px solid var(--guinda); border-bottom: 1.2px solid var(--guinda); gap: 5px; padding: 10px 0;}
-    .logo-nombre-grupo { flex-direction: column; gap: 5px; }
-    .logo { height: 75px; border: none; padding: 0; }
-    .brand-name { font-size: 1.7rem; letter-spacing: 2px; text-align: center; }
-    .brand-slogan { font-size: 0.7rem; letter-spacing: 2px; margin-top: 2px; }
+    
+    /* 👇 CENTRADO TOTAL DEL CONTENEDOR 👇 */
+    .brand-container { 
+        flex-direction: column; 
+        align-items: center; /* Centra horizontalmente */
+        justify-content: center; /* Centra verticalmente */
+        border-top: 1.2px solid var(--guinda); 
+        border-bottom: 1.2px solid var(--guinda); 
+        gap: 10px; 
+        padding: 15px 0;
+    }
+    
+    /* 👇 CENTRADO DEL GRUPO INTERNO 👇 */
+    .logo-nombre-grupo { 
+        flex-direction: column; 
+        align-items: center; /* Centra logo y textos */
+        gap: 10px; 
+    }
+    
+    /* 👇 LOGO MÁS GRANDE EN MÓVIL 👇 */
+    .logo { 
+        height: 120px; /* Aumentado drásticamente para que se vea */
+        border: none; 
+        padding: 0; 
+        margin: 0;
+    } 
+    
+    /* 👇 TEXTOS CENTRADOS Y MÁS GRANDES 👇 */
+    .brand-text-wrapper {
+        align-items: center; /* Centra el eslogan respecto al nombre */
+        text-align: center; /* Centra el texto interno */
+    }
+    
+    .brand-name { 
+        font-size: 2.2rem; /* Nombre más grande */
+        letter-spacing: 3px; 
+        margin: 0;
+    }
+    
+    .brand-slogan { 
+        font-size: 1rem; /* Eslogan más grande y legible */
+        letter-spacing: 3px; 
+        margin-top: 5px; 
+    }
+    
     .header-contact { display: none; }
     
-    .hero{flex-direction:column;text-align:center;padding:50px 20px;}
-    .hero h1{font-size:2.8rem;}
+    .hero{flex-direction:column;text-align:center;padding:60px 20px;}
+    .hero h1{font-size:3rem;}
     
-    .phones { display: flex !important; flex-direction: row !important; justify-content: center; margin-top: 25px; }
-    .phone1, .phone2 { width: 170px !important; display: block !important; transform: none !important; }
+    .phones { display: flex !important; flex-direction: row !important; justify-content: center; margin-top: 30px; }
+    .phone1, .phone2 { width: 180px !important; display: block !important; transform: none !important; }
     
     .grid { grid-template-columns: 1fr; }
-    .card:hover { transform: translateY(-5px); } /* Menos movimiento en móvil */
+    .card img { height: 300px; }
+    .card:hover { transform: translateY(-8px); }
 }
 </style>
 </head>
@@ -208,26 +253,27 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 </section>
 
 <section class="modelos">
-    <h2 style="font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:50px;">Nuestros Modelos</h2>
+    <h2 style="font-family:'Playfair Display',serif;font-size:3.2rem;margin-bottom:60px; color: var(--primario);">Nuestros Modelos</h2>
     <div class="grid">
-        <div class="card"><img id="fBoda"><h3>Bodas</h3><div style="padding:0 20px;"><a id="linkBoda" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fXV"><h3>XV Años</h3><div style="padding:0 20px;"><a id="linkXV" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fBautizo"><h3>Bautizos</h3><div style="padding:0 20px;"><a id="linkBautizo" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fBaby"><h3>Baby Showers</h3><div style="padding:0 20px;"><a id="linkBaby" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBoda"><h3>Bodas</h3><div style="padding:0 25px;"><a id="linkBoda" class="btn" style="padding:12px 25px; font-size:1rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fXV"><h3>XV Años</h3><div style="padding:0 25px;"><a id="linkXV" class="btn" style="padding:12px 25px; font-size:1rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBautizo"><h3>Bautizos</h3><div style="padding:0 25px;"><a id="linkBautizo" class="btn" style="padding:12px 25px; font-size:1rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBaby"><h3>Baby Showers</h3><div style="padding:0 25px;"><a id="linkBaby" class="btn" style="padding:12px 25px; font-size:1rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
     </div>
 </section>
 
 <section class="footer-message">
     <h2 id="laFrase"></h2>
-    <p id="elPie" style="color:var(--dorado-solido); letter-spacing:3px; text-transform:uppercase; font-weight:600;"></p>
-    <div style="margin-top:40px; color:#bbb;">© 2024 Mi Gran Día - Todos los derechos reservados.</div>
+    <p id="elPie" style="color:var(--dorado-solido); letter-spacing:4px; text-transform:uppercase; font-weight:600; font-size: 1.2rem;"></p>
+    <div style="margin-top:50px; color:#bbb; font-size: 1rem;">© 2024 Mi Gran Día - Todos los derechos reservados.</div>
 </section>
 
 <a id="elWA" class="whatsapp" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="38" alt="WA">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="42" alt="WA">
 </a>
 
 <script>
+    // MOTOR DE LA PÁGINA (NO TOCAR)
     document.getElementById('elNombreMarca').innerText = MI_CONFIGURACION.nombreMarca;
     document.getElementById('elSlogan').innerText = MI_CONFIGURACION.slogan;
     document.getElementById('elLogo').src = MI_CONFIGURACION.fotoLogo;
