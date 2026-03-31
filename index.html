@@ -12,7 +12,7 @@ const MI_CONFIGURACION = {
     subtituloHero: "Invitaciones digitales e interactivas que enamoran a tus invitados.",
     fraseFinal: '"Porque los mejores momentos de la vida merecen ser anunciados con elegancia."',
     pieDePagina: "Mi Gran Día | Experiencias Digitales",
-    whatsappUrl: "https://wa.me/525654252153",
+    whatsappUrl: "https://wa.me/5219911105456",
     enlaceBoda: "https://tu-enlace-de-ejemplo-boda.com",
     enlaceXV: "https://tu-enlace-de-ejemplo-xv.com",
     enlaceBautizo: "https://tu-enlace-de-ejemplo-bautizo.com",
@@ -38,20 +38,20 @@ const MI_CONFIGURACION = {
     --fondo: linear-gradient(135deg, #fdfbfb 0%, #f1e3d8 100%);
 }
 
-/* SEGURIDAD */
 *{margin:0;padding:0;box-sizing:border-box; -webkit-user-select: none; user-select: none;}
 img { -webkit-user-drag: none; pointer-events: none; }
 
 body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primario);overflow-x:hidden;}
 
-/* --- HEADER PARA ORDENADOR (WEB) --- */
+/* --- HEADER COMPACTO Y TRANSPARENTE CON LÍNEAS GUINDAS --- */
 .header {
-    background: #fff;
-    padding: 30px 60px;
+    background: rgba(255, 255, 255, 0.8); /* Transparencia elegante */
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    padding: 12px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(102, 0, 0, 0.15);
 }
 
 .brand-container {
@@ -60,102 +60,92 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
     justify-content: space-between;
     max-width: 1400px; 
     margin: 0 auto;
-    position: relative;
-    padding: 15px 0;
-    border-top: 1px solid rgba(201, 169, 106, 0.3);
-    border-bottom: 1px solid rgba(201, 169, 106, 0.3);
+    padding: 8px 0;
+    /* LÍNEAS GUINDAS DELGADAS ABAJO Y ARRIBA */
+    border-top: 1.2px solid var(--guinda);
+    border-bottom: 1.2px solid var(--guinda);
 }
 
 .logo-nombre-grupo {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 .logo {
-    height: 180px;
+    height: 70px; /* Reducido para que no estorbe */
     width: auto;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.08));
-    border-right: 1px solid #e5d1b8;
-    padding-right: 40px;
+    border-right: 1.2px solid var(--guinda); /* Línea divisoria guinda */
+    padding-right: 20px;
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: var(--primario);
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
-    line-height: 1;
-}
-
-.brand-name::after {
-    content: "D I G I T A L   &   E L E G A N T";
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 10px;
-    color: var(--dorado-solido);
-    margin-top: 15px;
-    font-weight: 400;
 }
 
 .header-contact {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--primario);
+    color: var(--guinda);
     font-weight: 600;
-    border: 1px solid var(--dorado-solido);
-    padding: 12px 25px;
+    border: 1px solid var(--guinda);
+    padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
     transition: 0.3s;
 }
 
-/* HERO */
-.hero{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:100px 20px;gap:80px;}
-.hero-text{flex:1.5; padding-right: 50px;}
-.hero h1{font-family:'Playfair Display',serif; font-size:4.8rem; color: var(--guinda); line-height:1.1; margin-bottom:30px;}
-.hero p{font-size:1.5rem;color:#6f5a4f;margin-bottom:50px;}
+.header-contact:hover {
+    background: var(--guinda);
+    color: #fff;
+}
 
-.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:20px 50px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(181,146,76,0.3);transition:.4s;display:inline-block;cursor:pointer;}
+/* HERO */
+.hero{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:80px 20px;gap:60px;}
+.hero h1{font-family:'Playfair Display',serif; font-size:4.2rem; color: var(--guinda); line-height:1.1; margin-bottom:20px;}
+.hero p{font-size:1.4rem;color:#6f5a4f;margin-bottom:40px;}
+
+.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:18px 45px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(181,146,76,0.25);transition:.4s;display:inline-block;cursor:pointer;}
 
 /* CELULARES */
 .phones{position:relative;flex:1;display:flex;justify-content:center;}
-.phone1{width:350px; transform:rotate(-5deg) translateX(50px); filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.18));}
-.phone2{width:350px; transform:rotate(5deg) translateX(-50px); filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.18));}
+.phone1{width:320px; transform:rotate(-5deg) translateX(40px); filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.15));}
+.phone2{width:320px; transform:rotate(5deg) translateX(-40px); filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.15));}
 
 /* MODELOS 4 ALINEADOS */
-.modelos{background:#fff;padding:100px 20px;text-align:center;border-radius:60px 60px 0 0;}
-.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns: repeat(4, 1fr); gap:30px;}
-.card{background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.05);border:1px solid #f1e3d8;transition:.4s;padding-bottom:25px;}
-.card img{width:100%;height:320px;object-fit:cover;margin-bottom:20px;}
-.card h3{font-family:'Playfair Display',serif;margin-bottom:20px; font-size: 2rem;}
+.modelos{background:#fff;padding:80px 20px;text-align:center;border-radius:50px 50px 0 0;}
+.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns: repeat(4, 1fr); gap:25px;}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.05);border:1px solid #f1e3d8;padding-bottom:20px;}
+.card img{width:100%;height:300px;object-fit:cover;margin-bottom:20px;}
+.card h3{font-family:'Playfair Display',serif;margin-bottom:15px; font-size: 1.8rem;}
 
-.footer-message{padding:120px 20px;text-align:center;background:#fdfbfb;}
-.footer-message h2{font-family:'Playfair Display',serif;font-size:3rem;font-style:italic;color:var(--primario);max-width:900px;margin:0 auto 30px;}
+.footer-message{padding:100px 20px;text-align:center;background:#fdfbfb;}
+.footer-message h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-style:italic;color:var(--primario);max-width:900px;margin:0 auto 30px;}
 
-.whatsapp{position:fixed;bottom:40px;right:40px;background:#25D366;width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000;}
+.whatsapp{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000;}
 
-/* --- MODO CELULAR (RESPETADO) --- */
+/* --- MODO CELULAR (INTACTO) --- */
 @media(max-width:900px){
-    .header { padding: 15px; }
-    .brand-container { flex-direction: column; border: none; gap: 10px; justify-content: center; padding: 5px 0;}
-    .logo-nombre-grupo { flex-direction: column; gap: 10px; }
-    .logo { height: 90px; border: none; padding: 0; }
-    .brand-name { font-size: 1.8rem; letter-spacing: 2px; text-align: center; }
-    .brand-name::after, .header-contact { display: none; }
+    .header { padding: 10px; background: rgba(255, 255, 255, 0.95); }
+    .brand-container { flex-direction: column; border-top: 1.2px solid var(--guinda); border-bottom: 1.2px solid var(--guinda); gap: 8px; padding: 10px 0;}
+    .logo-nombre-grupo { flex-direction: column; gap: 8px; }
+    .logo { height: 80px; border: none; padding: 0; }
+    .brand-name { font-size: 1.7rem; letter-spacing: 2px; text-align: center; }
+    .header-contact { display: none; }
     
     .hero{flex-direction:column;text-align:center;padding:60px 20px;}
     .hero h1{font-size:2.8rem;}
     
-    .phones { display: flex !important; flex-direction: row !important; justify-content: center; margin-top: 30px; }
+    .phones { display: flex !important; flex-direction: row !important; justify-content: center; margin-top: 25px; }
     .phone1, .phone2 { width: 170px !important; display: block !important; transform: none !important; }
     
     .grid { grid-template-columns: 1fr; }
-    .modelos h2 { font-size: 2.2rem; }
 }
 </style>
 </head>
@@ -168,7 +158,7 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
             <img id="elLogo" class="logo">
             <span id="elNombreMarca" class="brand-name"></span>
         </div>
-        <a href="https://wa.me/525654252153" class="header-contact">Solicitar Info</a>
+        <a href="https://wa.me/5219911105456" class="header-contact">Contacto</a>
     </div>
 </header>
 
@@ -188,17 +178,17 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 <section class="modelos">
     <h2 style="font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:50px;">Nuestros Modelos</h2>
     <div class="grid">
-        <div class="card"><img id="fBoda"><h3>Bodas</h3><div style="padding:0 20px;"><a id="linkBoda" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fXV"><h3>XV Años</h3><div style="padding:0 20px;"><a id="linkXV" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fBautizo"><h3>Bautizos</h3><div style="padding:0 20px;"><a id="linkBautizo" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%;">Ver Ejemplo</a></div></div>
-        <div class="card"><img id="fBaby"><h3>Baby Showers</h3><div style="padding:0 20px;"><a id="linkBaby" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBoda"><h3>Bodas</h3><div style="padding:0 20px;"><a id="linkBoda" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fXV"><h3>XV Años</h3><div style="padding:0 20px;"><a id="linkXV" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBautizo"><h3>Bautizos</h3><div style="padding:0 20px;"><a id="linkBautizo" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
+        <div class="card"><img id="fBaby"><h3>Baby Showers</h3><div style="padding:0 20px;"><a id="linkBaby" class="btn" style="padding:10px 20px; font-size:0.9rem; width:100%; text-align: center;">Ver Ejemplo</a></div></div>
     </div>
 </section>
 
 <section class="footer-message">
     <h2 id="laFrase"></h2>
     <p id="elPie" style="color:var(--dorado-solido); letter-spacing:3px; text-transform:uppercase; font-weight:600;"></p>
-    <div style="margin-top:40px; color:#bbb;">© 2025 Mi Gran Día - Todos los derechos reservados.</div>
+    <div style="margin-top:40px; color:#bbb;">© 2024 Mi Gran Día - Todos los derechos reservados.</div>
 </section>
 
 <a id="elWA" class="whatsapp" target="_blank">
