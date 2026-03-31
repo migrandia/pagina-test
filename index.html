@@ -9,23 +9,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --primario:#5d4037;
 --dorado:#d4af37;
+--fondo:linear-gradient(135deg,#fdfbfb 0%,#ebedee 100%);
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#fdfbfb 0%,#ebedee 100%);
+background:var(--fondo);
 color:var(--primario);
 }
 
 .header{
-text-align:center;
-padding:25px;
 background:#fff;
+text-align:center;
+padding:30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -35,95 +42,108 @@ max-width:220px;
 .hero{
 max-width:1200px;
 margin:auto;
+padding:60px 20px;
 display:flex;
 align-items:center;
-justify-content:space-between;
-gap:60px;
-padding:60px 20px;
+gap:80px;
 }
 
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:3.2rem;
+font-size:4rem;
 line-height:1.1;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:1.2rem;
-color:#666;
-margin-bottom:30px;
+color:#777;
+margin-bottom:35px;
 }
 
 .btn{
-display:inline-block;
-padding:16px 40px;
 background:var(--dorado);
 color:#fff;
-border-radius:40px;
+padding:18px 45px;
+border-radius:50px;
 text-decoration:none;
 font-weight:600;
+box-shadow:0 10px 25px rgba(212,175,55,0.4);
+display:inline-block;
 }
 
 .phones{
 display:flex;
-gap:20px;
+gap:25px;
 }
 
 .phones img{
-width:260px;
-border-radius:30px;
-box-shadow:0 20px 40px rgba(0,0,0,.15);
+width:270px;
+border-radius:35px;
+filter:drop-shadow(0 20px 40px rgba(0,0,0,0.15));
 }
 
 .modelos{
 background:#fff;
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
 }
 
+.modelos h2{
+font-family:'Playfair Display',serif;
+font-size:2.5rem;
+margin-bottom:40px;
+}
+
 .grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
 max-width:1100px;
 margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
 }
 
 .card{
 background:#fff;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
 overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
 }
 
 .card img{
 width:100%;
-height:200px;
+height:230px;
 object-fit:cover;
 }
 
 .card h3{
-padding:15px;
 font-family:'Playfair Display',serif;
+font-size:1.6rem;
+margin:20px 0;
 }
 
 .btn2{
 display:inline-block;
-margin-bottom:20px;
-padding:10px 25px;
+margin-bottom:25px;
+padding:10px 30px;
 border:2px solid var(--dorado);
 border-radius:30px;
-text-decoration:none;
 color:var(--dorado);
+text-decoration:none;
 font-weight:600;
 }
 
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
+bottom:30px;
+right:30px;
+width:65px;
+z-index:999;
 }
 
 @media(max-width:900px){
@@ -135,39 +155,38 @@ text-align:center;
 
 .phones{
 flex-direction:column;
-align-items:center;
 }
 
 .grid{
 grid-template-columns:1fr;
 }
 
+.hero h1{
+font-size:2.8rem;
 }
+
+}
+
 </style>
 
-<!-- ========================= -->
-<!-- EDITAR TODO AQUÍ -->
-<!-- ========================= -->
-
 <script>
-const CONFIG = {
+const CONFIG={
 
 logo:"logo.png",
-
 whatsapp:"https://wa.me/5210000000000",
 
-hero_img1:"celular1.png",
-hero_img2:"celular2.png",
+hero1:"cel1.png",
+hero2:"cel2.png",
 
-boda_img:"boda.jpg",
-xv_img:"xv.jpg",
-bautizo_img:"bautizo.jpg",
-baby_img:"baby.jpg",
+boda:"boda.jpg",
+xv:"xv.jpg",
+bautizo:"bautizo.jpg",
+baby:"baby.jpg",
 
-boda_link:"Bodas/index.html",
-xv_link:"XV/index.html",
-bautizo_link:"Bautizos/index.html",
-baby_link:"Baby/index.html"
+link_boda:"Bodas/index.html",
+link_xv:"XV/index.html",
+link_bautizo:"Bautizos/index.html",
+link_baby:"Baby/index.html"
 
 }
 </script>
@@ -182,7 +201,7 @@ baby_link:"Baby/index.html"
 
 <section class="hero">
 
-<div>
+<div class="hero-text">
 <h1>La primera impresión de tu Gran Día comienza aquí.</h1>
 <p>Invitaciones digitales e interactivas que enamoran a tus invitados.</p>
 <a id="btn" class="btn">¡Cotizar mi Invitación!</a>
@@ -197,62 +216,61 @@ baby_link:"Baby/index.html"
 
 <section class="modelos">
 
-<h2 style="margin-bottom:40px;font-family:'Playfair Display',serif;font-size:2.2rem">
-Ver Todos los Modelos
-</h2>
+<h2>Ver Todos los Modelos</h2>
 
 <div class="grid">
 
 <div class="card">
-<img id="boda_img">
+<img id="img_boda">
 <h3>Bodas</h3>
 <a id="boda_link" class="btn2">Ver Ejemplo</a>
 </div>
 
 <div class="card">
-<img id="xv_img">
+<img id="img_xv">
 <h3>XV Años</h3>
 <a id="xv_link" class="btn2">Ver Ejemplo</a>
 </div>
 
 <div class="card">
-<img id="bautizo_img">
+<img id="img_bautizo">
 <h3>Bautizos</h3>
 <a id="bautizo_link" class="btn2">Ver Ejemplo</a>
 </div>
 
 <div class="card">
-<img id="baby_img">
+<img id="img_baby">
 <h3>Baby Showers</h3>
 <a id="baby_link" class="btn2">Ver Ejemplo</a>
 </div>
 
 </div>
+
 </section>
 
-<a id="whatsapp_btn" target="_blank">
+<a id="whatsapp" target="_blank">
 <img class="whatsapp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
 </a>
 
 <script>
 
-logo.src = CONFIG.logo
+logo.src=CONFIG.logo
 
-btn.href = CONFIG.whatsapp
-whatsapp_btn.href = CONFIG.whatsapp
+btn.href=CONFIG.whatsapp
+whatsapp.href=CONFIG.whatsapp
 
-hero1.src = CONFIG.hero_img1
-hero2.src = CONFIG.hero_img2
+hero1.src=CONFIG.hero1
+hero2.src=CONFIG.hero2
 
-boda_img.src = CONFIG.boda_img
-xv_img.src = CONFIG.xv_img
-bautizo_img.src = CONFIG.bautizo_img
-baby_img.src = CONFIG.baby_img
+img_boda.src=CONFIG.boda
+img_xv.src=CONFIG.xv
+img_bautizo.src=CONFIG.bautizo
+img_baby.src=CONFIG.baby
 
-boda_link.href = CONFIG.boda_link
-xv_link.href = CONFIG.xv_link
-bautizo_link.href = CONFIG.bautizo_link
-baby_link.href = CONFIG.baby_link
+boda_link.href=CONFIG.link_boda
+xv_link.href=CONFIG.link_xv
+bautizo_link.href=CONFIG.link_bautizo
+baby_link.href=CONFIG.link_baby
 
 </script>
 
