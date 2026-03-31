@@ -5,6 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mi Gran Día | Invitaciones Digitales</title>
 
+<script>
+const MI_CONFIGURACION = {
+    // 1. TEXTOS PRINCIPALES
+    nombreMarca: "Mi Gran Día",
+    tituloHero: "La primera impresión de tu Gran Día comienza aquí.",
+    subtituloHero: "Invitaciones digitales e interactivas que enamoran a tus invitados.",
+    fraseFinal: '"Porque los mejores momentos de la vida merecen ser anunciados con elegancia."',
+    pieDePagina: "Mi Gran Día | Experiencias Digitales",
+
+    // 2. ENLACES (URLS)
+    whatsappUrl: "https://wa.me/5219911105456", // Tu número
+    enlaceBoda: "https://tu-enlace-de-ejemplo-boda.com",
+    enlaceXV: "https://tu-enlace-de-ejemplo-xv.com",
+    enlaceBautizo: "https://tu-enlace-de-ejemplo-bautizo.com",
+    enlaceBaby: "https://tu-enlace-de-ejemplo-baby.com",
+
+    // 3. FOTOS (Nombres de archivos en tu GitHub/Dropbox)
+    fotoLogo: "https://www.dropbox.com/scl/fi/7xqcc54jy4qtpgcmn0zhx/logo.png?rlkey=mwuejhlyagpz2r92gestu6yd2&raw=1",
+    fotoCelular1: "boda-celular.png",
+    fotoCelular2: "xv-celular.png",
+    
+    // Fotos de los cuadros de abajo
+    fotoPortadaBoda: "boda-portada.jpg",
+    fotoPortadaXV: "xv-portada.jpg",
+    fotoPortadaBautizo: "bautizo-portada.jpg",
+    fotoPortadaBaby: "baby-portada.jpg"
+};
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -16,120 +45,49 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primario);overflow-x:hidden;}
 
-body{
-font-family:'Poppins',sans-serif;
-background:var(--fondo);
-color:var(--primario);
-overflow-x:hidden;
-}
+/* HEADER */
+.header{background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);padding:15px;text-align:center;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(201,169,106,0.2);}
+.brand-container{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.logo{height:50px;}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--primario);letter-spacing:2px;text-transform:uppercase;}
 
-/* HEADER CON NOMBRE */
-.header{
-background: rgba(255,255,255,0.9);
-backdrop-filter: blur(10px);
-padding: 15px 20px;
-text-align:center;
-position: sticky;
-top: 0;
-z-index: 1000;
-border-bottom: 1px solid rgba(201, 169, 106, 0.2);
-}
+/* HERO */
+.hero{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:80px 20px;gap:40px;}
+.hero-text{flex:1;}
+.hero h1{font-family:'Playfair Display',serif;font-size:4rem;line-height:1.1;margin-bottom:25px;}
+.hero p{font-size:1.2rem;color:#6f5a4f;margin-bottom:40px;}
 
-.brand-container { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-.logo{ height: 50px; }
-.brand-name { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 1.8rem; 
-    color: var(--primario); 
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
+/* BOTÓN */
+.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:18px 45px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(181,146,76,0.3);transition:.4s;display:inline-block;cursor:pointer;}
+.btn:hover{transform:translateY(-5px);background-position:right center;}
 
-/* HERO SECTION */
-.hero{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 20px;
-gap:40px;
-}
-
-.hero-text { flex: 1; animation: fadeIn 1s ease; }
-
-.hero h1{
-font-family:'Playfair Display',serif;
-font-size: 4rem;
-line-height: 1.1;
-margin-bottom: 25px;
-}
-
-.hero p{ font-size: 1.2rem; color: #6f5a4f; margin-bottom: 40px; }
-
-/* BOTÓN DORADO */
-.btn{
-background: var(--dorado-brillante);
-background-size: 200% auto;
-color: #3e2c24;
-padding: 18px 45px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: 700;
-box-shadow: 0 10px 30px rgba(181, 146, 76, 0.3);
-transition: .4s;
-display: inline-block;
-}
-
-.btn:hover{ transform: translateY(-5px); background-position: right center; }
-
-/* PHONES */
-.phones{ position:relative; flex: 1; display: flex; justify-content: center; }
-.phone1{ width: 270px; transform: rotate(-8deg) translateX(30px); filter: drop-shadow(20px 30px 50px rgba(0,0,0,0.15)); }
-.phone2{ width: 270px; transform: rotate(8deg) translateX(-30px); filter: drop-shadow(-20px 30px 50px rgba(0,0,0,0.15)); }
+/* CELULARES */
+.phones{position:relative;flex:1;display:flex;justify-content:center;}
+.phone1{width:270px;transform:rotate(-8deg) translateX(30px);filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.15));}
+.phone2{width:270px;transform:rotate(8deg) translateX(-30px);filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.15));}
 
 /* MODELOS */
-.modelos{ background:#fff; padding:80px 20px; text-align:center; border-radius: 50px 50px 0 0; }
-.grid{ max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:30px; }
-.card{ background:#fff; border-radius: 25px; overflow:hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #f1e3d8; }
-.card img{ width:100%; height:230px; object-fit:cover; }
+.modelos{background:#fff;padding:80px 20px;text-align:center;border-radius:50px 50px 0 0;}
+.grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.card{background:#fff;border-radius:25px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.05);border:1px solid #f1e3d8;transition:.3s;padding-bottom:20px;}
+.card:hover{transform:translateY(-10px);}
+.card img{width:100%;height:230px;object-fit:cover;margin-bottom:15px;}
+.card h3{font-family:'Playfair Display',serif;margin-bottom:15px;}
 
-/* SECCIÓN FINAL (MENSAJE) */
-.footer-message {
-    padding: 100px 20px;
-    text-align: center;
-    background: #fdfbfb;
-}
-
-.footer-message h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-style: italic;
-    color: var(--primario);
-    max-width: 800px;
-    margin: 0 auto 20px;
-    line-height: 1.3;
-}
-
-.footer-message p {
-    font-size: 1.1rem;
-    color: var(--dorado-solido);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-weight: 600;
-}
+/* FOOTER MESSAGE */
+.footer-message{padding:100px 20px;text-align:center;background:#fdfbfb;}
+.footer-message h2{font-family:'Playfair Display',serif;font-size:2.5rem;font-style:italic;color:var(--primario);max-width:800px;margin:0 auto 20px;line-height:1.3;}
+.footer-message p{font-size:1.1rem;color:var(--dorado-solido);letter-spacing:3px;text-transform:uppercase;font-weight:600;}
 
 /* WHATSAPP */
-.whatsapp{ position:fixed; bottom:30px; right:30px; background:#25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.15); z-index: 2000; }
-
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.whatsapp{position:fixed;bottom:30px;right:30px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(0,0,0,0.15);z-index:2000;}
 
 @media(max-width:900px){
-    .hero{ flex-direction:column; text-align:center; padding: 40px 20px; }
-    .hero h1{ font-size: 2.5rem; }
-    .phone2 { display: none; }
-    .brand-name { font-size: 1.4rem; }
+    .hero{flex-direction:column;text-align:center;padding:40px 20px;}
+    .hero h1{font-size:2.5rem;}
+    .phone2{display:none;}
 }
 </style>
 </head>
@@ -138,42 +96,69 @@ display: inline-block;
 
 <header class="header">
     <div class="brand-container">
-        <img src="1000508411.png" alt="Logo" class="logo">
-        <span class="brand-name">Mi Gran Día</span>
+        <img id="elLogo" class="logo">
+        <span id="elNombreMarca" class="brand-name"></span>
     </div>
 </header>
 
 <section class="hero">
     <div class="hero-text">
-        <h1>La primera impresión de tu Gran Día comienza aquí.</h1>
-        <p>Invitaciones digitales e interactivas que enamoran a tus invitados.</p>
-        <a href="https://wa.me/5219911105456" class="btn">¡Cotizar mi Invitación!</a>
+        <h1 id="elTitulo"></h1>
+        <p id="elSubtitulo"></p>
+        <a id="elBtnHero" class="btn">¡Cotizar mi Invitación!</a>
     </div>
 
     <div class="phones">
-        <img src="boda-celular.png" class="phone1" alt="Boda">
-        <img src="xv-celular.png" class="phone2" alt="XV">
+        <img id="elCel1" class="phone1">
+        <img id="elCel2" class="phone2">
     </div>
 </section>
 
 <section class="modelos">
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px;">Nuestros Modelos</h2>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:40px;">Nuestros Modelos</h2>
     <div class="grid">
-        <div class="card"><img src="boda-portada.jpg"><h3>Bodas</h3></div>
-        <div class="card"><img src="xv-portada.jpg"><h3>XV Años</h3></div>
-        <div class="card"><img src="bautizo-portada.jpg"><h3>Bautizos</h3></div>
-        <div class="card"><img src="baby-portada.jpg"><h3>Baby Showers</h3></div>
+        <div class="card"><img id="fBoda"><h3>Bodas</h3><a id="linkBoda" class="btn" style="padding:10px 25px;font-size:0.9rem;">Ver Ejemplo</a></div>
+        <div class="card"><img id="fXV"><h3>XV Años</h3><a id="linkXV" class="btn" style="padding:10px 25px;font-size:0.9rem;">Ver Ejemplo</a></div>
+        <div class="card"><img id="fBautizo"><h3>Bautizos</h3><a id="linkBautizo" class="btn" style="padding:10px 25px;font-size:0.9rem;">Ver Ejemplo</a></div>
+        <div class="card"><img id="fBaby"><h3>Baby Showers</h3><a id="linkBaby" class="btn" style="padding:10px 25px;font-size:0.9rem;">Ver Ejemplo</a></div>
     </div>
 </section>
 
 <section class="footer-message">
-    <h2>"Porque los mejores momentos de la vida merecen ser anunciados con elegancia."</h2>
-    <p>Mi Gran Día | Experiencias Digitales</p>
+    <h2 id="laFrase"></h2>
+    <p id="elPie"></p>
 </section>
 
-<a href="https://wa.me/5219911105456" class="whatsapp" target="_blank">
+<a id="elWA" class="whatsapp" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WA">
 </a>
+
+<script>
+    document.getElementById('elNombreMarca').innerText = MI_CONFIGURACION.nombreMarca;
+    document.getElementById('elLogo').src = MI_CONFIGURACION.fotoLogo;
+    document.getElementById('elTitulo').innerText = MI_CONFIGURACION.tituloHero;
+    document.getElementById('elSubtitulo').innerText = MI_CONFIGURACION.subtituloHero;
+    document.getElementById('elBtnHero').href = MI_CONFIGURACION.whatsappUrl;
+    document.getElementById('elWA').href = MI_CONFIGURACION.whatsappUrl;
+    
+    document.getElementById('elCel1').src = MI_CONFIGURACION.fotoCelular1;
+    document.getElementById('elCel2').src = MI_CONFIGURACION.fotoCelular2;
+    
+    document.getElementById('fBoda').src = MI_CONFIGURACION.fotoPortadaBoda;
+    document.getElementById('linkBoda').href = MI_CONFIGURACION.enlaceBoda;
+    
+    document.getElementById('fXV').src = MI_CONFIGURACION.fotoPortadaXV;
+    document.getElementById('linkXV').href = MI_CONFIGURACION.enlaceXV;
+    
+    document.getElementById('fBautizo').src = MI_CONFIGURACION.fotoPortadaBautizo;
+    document.getElementById('linkBautizo').href = MI_CONFIGURACION.enlaceBautizo;
+    
+    document.getElementById('fBaby').src = MI_CONFIGURACION.fotoPortadaBaby;
+    document.getElementById('linkBaby').href = MI_CONFIGURACION.enlaceBaby;
+    
+    document.getElementById('laFrase').innerText = MI_CONFIGURACION.fraseFinal;
+    document.getElementById('elPie').innerText = MI_CONFIGURACION.pieDePagina;
+</script>
 
 </body>
 </html>
