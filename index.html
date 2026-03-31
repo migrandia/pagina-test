@@ -1,199 +1,261 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Gran Día | Invitaciones Digitales</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CONFIGURACIÓN DE COLORES Y ESTILO WOW */
-        :root {
-            --primario: #5d4037; /* Marrón elegante */
-            --dorado: #d4af37; /* Dorado Champagne */
-            --fondo: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Gran Día</title>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background: var(--fondo) !important; 
-            color: var(--primario); 
-            overflow-x: hidden; 
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        /* LOGO */
-        .header { text-align: center; padding: 30px; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { max-width: 220px; height: auto; }
+<style>
+:root{
+--primario:#5d4037;
+--dorado:#d4af37;
+}
 
-        /* SECCIÓN PRINCIPAL (Texto izquierda, Celulares derecha en PC) */
-        .hero { 
-            display: flex; flex-direction: column; align-items: center; 
-            padding: 60px 20px; text-align: center; max-width: 1200px; margin: 0 auto; 
-        }
+*{margin:0;padding:0;box-sizing:border-box}
 
-        .hero-content h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 3.2rem; 
-            margin-bottom: 20px; 
-            line-height: 1.1; 
-            color: var(--primario);
-        }
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#fdfbfb 0%,#ebedee 100%);
+color:var(--primario);
+}
 
-        .hero-content p { font-size: 1.2rem; color: #777; margin-bottom: 40px; }
+.header{
+text-align:center;
+padding:25px;
+background:#fff;
+}
 
-        /* BOTÓN DORADO */
-        .btn-wow { 
-            display: inline-block; 
-            padding: 18px 45px; 
-            background: var(--dorado); 
-            color: white !important; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 600; 
-            font-size: 1.1rem;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); 
-            transition: 0.3s;
-        }
-        .btn-wow:hover { transform: translateY(-3px); background: #b8962d; }
+.logo{
+max-width:220px;
+}
 
-        /* CONTENEDOR DE CELULARES */
-        .phone-display-container { 
-            display: flex; 
-            gap: 25px; 
-            margin-top: 60px; 
-            justify-content: center; 
-            width: 100%;
-        }
+.hero{
+max-width:1200px;
+margin:auto;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+padding:60px 20px;
+}
 
-        .phone-card { width: 280px; }
-        .phone-card img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 35px; 
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)); 
-        }
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:3.2rem;
+line-height:1.1;
+margin-bottom:20px;
+}
 
-        /* SECCIÓN DE MODELOS */
-        .modelos { padding: 80px 20px; text-align: center; background: white; }
-        .titulo-seccion { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 2.5rem; 
-            margin-bottom: 40px; 
-        }
+.hero p{
+font-size:1.2rem;
+color:#666;
+margin-bottom:30px;
+}
 
-        .grid-modelos { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-            gap: 30px; 
-            max-width: 1100px; 
-            margin: 0 auto; 
-        }
+.btn{
+display:inline-block;
+padding:16px 40px;
+background:var(--dorado);
+color:#fff;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+}
 
-        .tarjeta { 
-            background: #fff; 
-            border-radius: 20px; 
-            padding-bottom: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            overflow: hidden; 
-            transition: 0.3s;
-        }
-        .tarjeta:hover { transform: translateY(-10px); }
-        .tarjeta img { width: 100%; height: 230px; object-fit: cover; margin-bottom: 20px; }
-        .tarjeta h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 20px; }
+.phones{
+display:flex;
+gap:20px;
+}
 
-        .btn-ejemplo { 
-            display: inline-block; 
-            padding: 10px 30px; 
-            color: var(--dorado); 
-            text-decoration: none; 
-            font-weight: 600; 
-            border: 2px solid var(--dorado); 
-            border-radius: 30px; 
-            transition: 0.3s;
-        }
-        .btn-ejemplo:hover { background: var(--dorado); color: white; }
+.phones img{
+width:260px;
+border-radius:30px;
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
 
-        /* WHATSAPP */
-        .btn-whatsapp { 
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            width: 65px; 
-            z-index: 1000; 
-        }
+.modelos{
+background:#fff;
+padding:70px 20px;
+text-align:center;
+}
 
-        /* AJUSTES PARA COMPUTADORA */
-        @media (min-width: 1024px) {
-            .hero { flex-direction: row; text-align: left; gap: 80px; }
-            .hero-content { flex: 1.2; }
-            .hero-content h1 { font-size: 4.5rem; }
-            .phone-display-container { flex: 1; margin-top: 0; }
-            .second-phone { display: block; }
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+max-width:1100px;
+margin:auto;
+}
 
-        @media (max-width: 768px) {
-            .second-phone { display: none; }
-            .hero-content h1 { font-size: 2.8rem; }
-        }
-    </style>
+.card{
+background:#fff;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+font-family:'Playfair Display',serif;
+}
+
+.btn2{
+display:inline-block;
+margin-bottom:20px;
+padding:10px 25px;
+border:2px solid var(--dorado);
+border-radius:30px;
+text-decoration:none;
+color:var(--dorado);
+font-weight:600;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.phones{
+flex-direction:column;
+align-items:center;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+
+<!-- ========================= -->
+<!-- EDITAR TODO AQUÍ -->
+<!-- ========================= -->
+
+<script>
+const CONFIG = {
+
+logo:"logo.png",
+
+whatsapp:"https://wa.me/5210000000000",
+
+hero_img1:"celular1.png",
+hero_img2:"celular2.png",
+
+boda_img:"boda.jpg",
+xv_img:"xv.jpg",
+bautizo_img:"bautizo.jpg",
+baby_img:"baby.jpg",
+
+boda_link:"Bodas/index.html",
+xv_link:"XV/index.html",
+bautizo_link:"Bautizos/index.html",
+baby_link:"Baby/index.html"
+
+}
+</script>
+
 </head>
+
 <body>
 
-    <header class="header">
-        <img src="1000508411.png" alt="Mi Gran Día" class="logo">
-    </header>
+<header class="header">
+<img id="logo" class="logo">
+</header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>La primera impresión de tu Gran Día comienza aquí.</h1>
-            <p>Invitaciones digitales e interactivas que enamoran a tus invitados.</p>
-            <br>
-            <a href="https://wa.me/5219911105456" class="btn-wow">¡Cotizar mi Invitación!</a>
-        </div>
-        
-        <div class="phone-display-container">
-            <div class="phone-card">
-                <img src="boda-celular.png" alt="Invitación Boda">
-            </div>
-            <div class="phone-card second-phone">
-                <img src="xv-celular.png" alt="Invitación XV Años">
-            </div>
-        </div>
-    </section>
+<section class="hero">
 
-    <section class="modelos">
-        <h2 class="titulo-seccion">Ver Todos los Modelos</h2>
-        <div class="grid-modelos">
-            <div class="tarjeta">
-                <img src="boda-portada.jpg" alt="Bodas">
-                <h3>Bodas</h3>
-                <a href="Bodas/index.html" class="btn-ejemplo">Ver Ejemplo</a>
-            </div>
-            <div class="tarjeta">
-                <img src="xv-portada.jpg" alt="XV Años">
-                <h3>XV Años</h3>
-                <a href="XV-Anos/index.html" class="btn-ejemplo">Ver Ejemplo</a>
-            </div>
-            <div class="tarjeta">
-                <img src="bautizo-portada.jpg" alt="Bautizos">
-                <h3>Bautizos</h3>
-                <a href="Bautizos/index.html" class="btn-ejemplo">Ver Ejemplo</a>
-            </div>
-            <div class="tarjeta">
-                <img src="baby-portada.jpg" alt="Baby Showers">
-                <h3>Baby Showers</h3>
-                <a href="Baby-Showers/index.html" class="btn-ejemplo">Ver Ejemplo</a>
-            </div>
-        </div>
-    </section>
+<div>
+<h1>La primera impresión de tu Gran Día comienza aquí.</h1>
+<p>Invitaciones digitales e interactivas que enamoran a tus invitados.</p>
+<a id="btn" class="btn">¡Cotizar mi Invitación!</a>
+</div>
 
-    <a href="https://wa.me/5219911105456" class="btn-whatsapp" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+<div class="phones">
+<img id="hero1">
+<img id="hero2">
+</div>
+
+</section>
+
+<section class="modelos">
+
+<h2 style="margin-bottom:40px;font-family:'Playfair Display',serif;font-size:2.2rem">
+Ver Todos los Modelos
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<img id="boda_img">
+<h3>Bodas</h3>
+<a id="boda_link" class="btn2">Ver Ejemplo</a>
+</div>
+
+<div class="card">
+<img id="xv_img">
+<h3>XV Años</h3>
+<a id="xv_link" class="btn2">Ver Ejemplo</a>
+</div>
+
+<div class="card">
+<img id="bautizo_img">
+<h3>Bautizos</h3>
+<a id="bautizo_link" class="btn2">Ver Ejemplo</a>
+</div>
+
+<div class="card">
+<img id="baby_img">
+<h3>Baby Showers</h3>
+<a id="baby_link" class="btn2">Ver Ejemplo</a>
+</div>
+
+</div>
+</section>
+
+<a id="whatsapp_btn" target="_blank">
+<img class="whatsapp" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+<script>
+
+logo.src = CONFIG.logo
+
+btn.href = CONFIG.whatsapp
+whatsapp_btn.href = CONFIG.whatsapp
+
+hero1.src = CONFIG.hero_img1
+hero2.src = CONFIG.hero_img2
+
+boda_img.src = CONFIG.boda_img
+xv_img.src = CONFIG.xv_img
+bautizo_img.src = CONFIG.bautizo_img
+baby_img.src = CONFIG.baby_img
+
+boda_link.href = CONFIG.boda_link
+xv_link.href = CONFIG.xv_link
+bautizo_link.href = CONFIG.bautizo_link
+baby_link.href = CONFIG.baby_link
+
+</script>
 
 </body>
 </html>
+```
