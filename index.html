@@ -8,6 +8,7 @@
 <script>
 const MI_CONFIGURACION = {
     nombreMarca: "Mi Gran Día",
+    slogan: "Eventos Inolvidables",
     tituloHero: "La primera impresión de tu Gran Día comienza aquí.",
     subtituloHero: "Invitaciones digitales e interactivas que enamoran a tus invitados.",
     fraseFinal: '"Porque los mejores momentos de la vida merecen ser anunciados con elegancia."',
@@ -43,15 +44,15 @@ img { -webkit-user-drag: none; pointer-events: none; }
 
 body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primario);overflow-x:hidden;}
 
-/* --- HEADER COMPACTO Y TRANSPARENTE CON LÍNEAS GUINDAS --- */
+/* --- HEADER TRANSPARENTE CON SLOGAN --- */
 .header {
-    background: rgba(255, 255, 255, 0.8); /* Transparencia elegante */
-    backdrop-filter: blur(10px); /* Desenfoque de fondo */
-    padding: 12px 40px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(102, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(102, 0, 0, 0.1);
 }
 
 .brand-container {
@@ -61,7 +62,6 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
     max-width: 1400px; 
     margin: 0 auto;
     padding: 8px 0;
-    /* LÍNEAS GUINDAS DELGADAS ABAJO Y ARRIBA */
     border-top: 1.2px solid var(--guinda);
     border-bottom: 1.2px solid var(--guinda);
 }
@@ -69,23 +69,38 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 .logo-nombre-grupo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .logo {
-    height: 70px; /* Reducido para que no estorbe */
+    height: 75px;
     width: auto;
-    border-right: 1.2px solid var(--guinda); /* Línea divisoria guinda */
-    padding-right: 20px;
+    border-right: 1.2px solid var(--guinda);
+    padding-right: 25px;
+}
+
+.brand-text-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .brand-name {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primario);
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
+    line-height: 1;
+}
+
+.brand-slogan {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: var(--dorado-solido);
+    letter-spacing: 3px;
+    margin-top: 5px;
+    text-transform: uppercase;
 }
 
 .header-contact {
@@ -101,51 +116,65 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
     transition: 0.3s;
 }
 
-.header-contact:hover {
-    background: var(--guinda);
-    color: #fff;
-}
-
 /* HERO */
 .hero{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:80px 20px;gap:60px;}
 .hero h1{font-family:'Playfair Display',serif; font-size:4.2rem; color: var(--guinda); line-height:1.1; margin-bottom:20px;}
 .hero p{font-size:1.4rem;color:#6f5a4f;margin-bottom:40px;}
 
-.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:18px 45px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(181,146,76,0.25);transition:.4s;display:inline-block;cursor:pointer;}
+.btn{background:var(--dorado-brillante);background-size:200% auto;color:#3e2c24;padding:18px 45px;border-radius:50px;text-decoration:none;font-weight:700;box-shadow:0 10px 25px rgba(181,146,76,0.25);transition:.4s;display:inline-block;cursor:pointer; border: none;}
+.btn:hover{transform:translateY(-3px); background-position: right center;}
 
 /* CELULARES */
 .phones{position:relative;flex:1;display:flex;justify-content:center;}
 .phone1{width:320px; transform:rotate(-5deg) translateX(40px); filter:drop-shadow(20px 30px 50px rgba(0,0,0,0.15));}
 .phone2{width:320px; transform:rotate(5deg) translateX(-40px); filter:drop-shadow(-20px 30px 50px rgba(0,0,0,0.15));}
 
-/* MODELOS 4 ALINEADOS */
+/* MODELOS CON INTERACCIÓN (MOVIMIENTO) */
 .modelos{background:#fff;padding:80px 20px;text-align:center;border-radius:50px 50px 0 0;}
 .grid{max-width:1400px;margin:auto;display:grid;grid-template-columns: repeat(4, 1fr); gap:25px;}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.05);border:1px solid #f1e3d8;padding-bottom:20px;}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+    border:1px solid #f1e3d8;
+    padding-bottom:25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* ESTO HACE QUE SE MUEVA */
+}
+
+.card:hover {
+    transform: translateY(-15px); /* Se eleva al pasar el ratón */
+    box-shadow: 0 20px 40px rgba(181, 146, 76, 0.2);
+}
+
 .card img{width:100%;height:300px;object-fit:cover;margin-bottom:20px;}
 .card h3{font-family:'Playfair Display',serif;margin-bottom:15px; font-size: 1.8rem;}
 
 .footer-message{padding:100px 20px;text-align:center;background:#fdfbfb;}
 .footer-message h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-style:italic;color:var(--primario);max-width:900px;margin:0 auto 30px;}
 
-.whatsapp{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000;}
+.whatsapp{position:fixed;bottom:30px;right:30px;background:#25D366;width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 25px rgba(0,0,0,0.2);z-index:2000; transition: 0.3s;}
+.whatsapp:hover { transform: scale(1.1); }
 
-/* --- MODO CELULAR (INTACTO) --- */
+/* --- MODO CELULAR INTACTO --- */
 @media(max-width:900px){
-    .header { padding: 10px; background: rgba(255, 255, 255, 0.95); }
-    .brand-container { flex-direction: column; border-top: 1.2px solid var(--guinda); border-bottom: 1.2px solid var(--guinda); gap: 8px; padding: 10px 0;}
-    .logo-nombre-grupo { flex-direction: column; gap: 8px; }
-    .logo { height: 80px; border: none; padding: 0; }
+    .header { padding: 10px; }
+    .brand-container { flex-direction: column; border-top: 1.2px solid var(--guinda); border-bottom: 1.2px solid var(--guinda); gap: 5px; padding: 10px 0;}
+    .logo-nombre-grupo { flex-direction: column; gap: 5px; }
+    .logo { height: 75px; border: none; padding: 0; }
     .brand-name { font-size: 1.7rem; letter-spacing: 2px; text-align: center; }
+    .brand-slogan { font-size: 0.7rem; letter-spacing: 2px; margin-top: 2px; }
     .header-contact { display: none; }
     
-    .hero{flex-direction:column;text-align:center;padding:60px 20px;}
+    .hero{flex-direction:column;text-align:center;padding:50px 20px;}
     .hero h1{font-size:2.8rem;}
     
     .phones { display: flex !important; flex-direction: row !important; justify-content: center; margin-top: 25px; }
     .phone1, .phone2 { width: 170px !important; display: block !important; transform: none !important; }
     
     .grid { grid-template-columns: 1fr; }
+    .card:hover { transform: translateY(-5px); } /* Menos movimiento en móvil */
 }
 </style>
 </head>
@@ -156,7 +185,10 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
     <div class="brand-container">
         <div class="logo-nombre-grupo">
             <img id="elLogo" class="logo">
-            <span id="elNombreMarca" class="brand-name"></span>
+            <div class="brand-text-wrapper">
+                <span id="elNombreMarca" class="brand-name"></span>
+                <span id="elSlogan" class="brand-slogan"></span>
+            </div>
         </div>
         <a href="https://wa.me/5219911105456" class="header-contact">Contacto</a>
     </div>
@@ -197,6 +229,7 @@ body{font-family:'Poppins',sans-serif;background:var(--fondo);color:var(--primar
 
 <script>
     document.getElementById('elNombreMarca').innerText = MI_CONFIGURACION.nombreMarca;
+    document.getElementById('elSlogan').innerText = MI_CONFIGURACION.slogan;
     document.getElementById('elLogo').src = MI_CONFIGURACION.fotoLogo;
     document.getElementById('elTitulo').innerText = MI_CONFIGURACION.tituloHero;
     document.getElementById('elSubtitulo').innerText = MI_CONFIGURACION.subtituloHero;
